@@ -17,11 +17,7 @@ services:
       read_only: true
       stdin_open: true
       tty: true
-      tmpfs:
-        - /tmp
-      restart: unless-stopped
-      stdin_open: true
-      tty: true
+      restart: always
       volumes:
         - /mnt:/mnt:z
         - /mnt2:/mnt2:z
