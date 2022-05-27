@@ -1,0 +1,15 @@
+image: docker:latest
+services:
+  - docker:dind
+
+stages:
+  - deploy
+
+step-deploy-production:
+  stage: deploy
+  before_script:
+    - export DYNAMIC_ENV_VAR=PRODUCTION
+    
+  script:
+    - echo setting up env $DYNAMIC_ENV_VAR
+    - sh haha.sh
